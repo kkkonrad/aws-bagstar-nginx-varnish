@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  varnish:
+    image: varnish:6.6
+    volumes:
+      - ./magento2.vcl:/etc/varnish/default.vcl
+#      - ./cache_server/varnish:/etc/default/varnish
+    ports:
+      - "80:80"
+      - "6082:6082"
